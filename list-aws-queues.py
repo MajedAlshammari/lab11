@@ -11,7 +11,7 @@ from boto.exception import SQSError
 import sys
 
 # Get the keys from a specific url and then use them to connect to AWS Service 
-access_key_id = ""
+access_key_id = requests.get('http://ec2-52-30-7-5.eu-west-1.compute.amazonaws.com:81/key')
 secret_access_key = ""
 
 print "access code: "+access_key_id
