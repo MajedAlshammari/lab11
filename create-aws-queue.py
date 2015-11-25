@@ -1,4 +1,4 @@
- This script created a queue
+# This script created a queue
 #
 # Author - Paul Doyle Nov 2015
 #
