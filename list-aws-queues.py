@@ -16,7 +16,7 @@ import urllib2
 #access_key_id = webbrowser.open('http://ec2-52-30-7-5.eu-west-1.compute.amazonaws.com:81/key') 
 
 response = urllib2.urlopen('http://ec2-52-30-7-5.eu-west-1.compute.amazonaws.com:81/key')
-access_key_id = response
+access_key_id = response.read()
 secret_access_key = ""
 
 print access_key_id
