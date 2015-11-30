@@ -21,6 +21,6 @@ print secret_access_key
 # Set up a connection to the AWS service. 
 conn = boto.sqs.connect_to_region("eu-west-1", aws_access_key_id=access_key_id, aws_secret_access_key=secret_access_key)
 
-conn.send_message(queue= sys.argv[1], body=sys.argv[2])
+conn.send_message(sys.argv[1], sys.argv[2])
 
 print 'message: %s has been written	to	the	queue' % sys.argv[2] 
