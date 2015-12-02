@@ -22,6 +22,17 @@ print secret_access_key
 conn = boto.sqs.connect_to_region("eu-west-1", aws_access_key_id=access_key_id, aws_secret_access_key=secret_access_key)
 
 
-conn.RawMessage(sys.argv[1], sys.argv[2])
+queue_name = sys.argv[1]
+# Get a list of the queues that exists and then print the list out
+rs = conn.get_queue(queue_name)
+# Get a list of the queues that exists and then print the list out
+#rs = conn.get_all_queues()
 
-print 'message: %s has been written	to	the	queue' % sys.argv[2] 
+rs.set_message_class(Message)		
+m = Message()
+m.set_body(sys.argv[2])
+rs.write(m)
+
+#conn.RawMessage(sys.argv[1], sys.argv[2])
+
+#print 'message: %s has been written	to	the	queue' % sys.argv[2] 
